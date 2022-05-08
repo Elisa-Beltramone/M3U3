@@ -1,0 +1,8 @@
+
+.hero{
+    background: url(..\images\fondo.jpg) no-repeat;
+    background-size: cover;
+    height: 0.5vh;
+    min-height: 450px;
+}
+
