@@ -7,16 +7,16 @@ var usuariosModel = require("./../../modelos/usuariosModel");
 /* GET home page. Diseño login */
 router.get('/', function (req, res, next) {
   res.render('admin/login', {
-    layout:"admin/layout"
-  } );
+    layout: "admin/layout"
+  });
 });
 
 /* GET home page. Diseño logout */
 router.get('/logout', function (req, res, next) {
   req.session.destroy();
   res.render('admin/login', {
-    layout:"admin/layout"
-  } );
+    layout: "admin/layout"
+  });
 });
 
 
@@ -33,14 +33,14 @@ router.post("/", async (req, res, next) => {
 
       req.session.id_usuario = data.id;
       req.session.nombre = data.usuario;
-
       res.redirect("/admin/novedades");
-      } else {
-        res.render("admin/login", {
-          layout: "admin/layout",
-          error: true
-        })
-      }
+
+    } else {
+      res.render("admin/login", {
+        layout: "admin/layout",
+        error: true
+      })
+    }
   } catch (error) {
     console.log(error)
   }
